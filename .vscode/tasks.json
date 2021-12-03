@@ -1,0 +1,10 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "pandoc-md-pdf",
+            "type": "shell",
+            "command": "pandoc ${file} -o ${fileDirname}/${fileBasenameNoExtension}.pdf --from markdown --template ${workspaceFolder}/.pandoc_data_dir/default_template.tex --listings"
+        }
+    ]
+}
