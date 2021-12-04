@@ -1,5 +1,6 @@
 ---
 title: Pandoc
+listings-disable-line-numbers: true
 ---
 
 # Pandoc Configurations
@@ -24,34 +25,60 @@ title: Pandoc
 - VScode
   1. Open the Command Palette (Ctrl+Shift+P on Windows or Command+Shift+P on Mac), search for "Preference: Configure User Snippets" and click "markdown.json".
   2. Add a custom header. For example:
-```json
-"header": {
-    "prefix": "header",
-    "body": [
-        "---",
-        "title: $TM_FILENAME_BASE",
-        "date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
-        "author: <author>",
-        "geometry: \"left=3cm,right=3cm,top=2cm,bottom=2cm\"",
-        "---"
-    ]
-}
-```
-Open the Command Palette (Ctrl+Shift+P on Windows or Command+Shift+P on Mac), search for "Preference: Open Settings (JSON)" and click it. Add configurations:
-```json
-"[markdown]":  {
-    "editor.quickSuggestions": true
-}
-```
-Then, when editing any markdown file in the editor, type "header"+Enter to generate the header automatically.
+  ```json
+  "header": {
+      "prefix": "header",
+      "body": [
+          "---",
+          "title: $TM_FILENAME_BASE",
+          "date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+          "author: <author>",
+          "geometry: \"left=3cm,right=3cm,top=2cm,bottom=2cm\"",
+          "---"
+      ]
+  }
+  ```
+  Open the Command Palette (Ctrl+Shift+P on Windows or Command+Shift+P on Mac), search for "Preference: Open Settings (JSON)" and click it. Add configurations:
+  ```json
+  "[markdown]": {
+      "editor.quickSuggestions": true
+  }
+  ```
+  Then, when editing any markdown file in the editor, type "header"+Enter to generate the header automatically.
   3. Add customized tasks, open the Command Palette (Ctrl+Shift+P on Windows or Command+Shift+P on Mac), search and click "Tasks: Configure Task", add tasks into the json file. For example:
-```json
-"tasks": [
-    {
-        "label": "pandoc-md-pdf",
-        "type": "shell",
-        "command": "pandoc ${file} --data-dir <data directory> --template <template name> -o ${fileBasenameNoExtension}.pdf"
-    }
-]
-```
+  ```json
+  "tasks": [
+      {
+          "label": "pandoc-md-pdf",
+          "type": "shell",
+          "command": "pandoc",
+          "args": [
+              "${file}",
+              "-o",
+              "${fileDirname}/${fileBasenameNoExtension}.pdf",
+              "--from",
+              "markdown",
+              "--listings",
+              "--template",
+              "<template path>"
+          ]
+      },
+      {
+          "label": "pandoc-md-pdf-open",
+          "type": "shell",
+          "command": "open",
+          "args": [
+              "${fileDirname}/${fileBasenameNoExtension}.pdf"
+          ],
+          "dependsOn": [
+              "pandoc-md-pdf"
+          ],
+          "group": {
+              "kind": "build",
+              "isDefault": true
+          },
+          "problemMatcher": []
+      }
+  ]
+  ```
   4. Run the task by opening the Command Palette (Ctrl+Shift+P on Windows or Command+Shift+P on Mac), search for "Task: Run Task" and click the task created.

@@ -4,7 +4,33 @@
         {
             "label": "pandoc-md-pdf",
             "type": "shell",
-            "command": "pandoc ${file} -o ${fileDirname}/${fileBasenameNoExtension}.pdf --from markdown --template ${workspaceFolder}/.pandoc_data_dir/default_template.tex --listings"
+            "command": "pandoc",
+            "args": [
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.pdf",
+                "--from",
+                "markdown",
+                "--listings",
+                "--template",
+                "${workspaceFolder}/.pandoc_data_dir/default_template.tex"
+            ]
+        },
+        {
+            "label": "pandoc-md-pdf-open",
+            "type": "shell",
+            "command": "open",
+            "args": [
+                "${fileDirname}/${fileBasenameNoExtension}.pdf"
+            ],
+            "dependsOn": [
+                "pandoc-md-pdf"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
         }
     ]
 }
