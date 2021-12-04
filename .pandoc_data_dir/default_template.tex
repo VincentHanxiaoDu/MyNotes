@@ -248,6 +248,8 @@ $if(beamer)$
 $else$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
+$else$
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 $endif$
 $if(beamer)$
 \newif\ifbibliography
@@ -260,11 +262,28 @@ $if(listings)$
 $endif$
 
 % ========================== Customized configurations =========================
-$if(listings)$
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{pifont}
+\usepackage{marvosym}
+\usepackage{mathtools}
+\usepackage{environ}
+\usepackage{lipsum}
+\usepackage{accents}
+\usepackage{hyperref}
+\usepackage{graphicx}
 
-%
-% general listing colors
-%
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\setlength{\parindent}{0pt}
+\renewcommand{\qedsymbol}{$$\blacksquare$$}
+\DeclareMathOperator*{\argmax}{\arg\!\max}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+
+
+$if(listings)$
 \definecolor{listing-background}{HTML}{F7F7F7}
 \definecolor{listing-rule}{HTML}{B3B2B3}
 \definecolor{listing-numbers}{HTML}{B3B2B3}
@@ -377,7 +396,7 @@ $endif$
   identifierstyle = \color{listing-identifier}
 }
 % Json
-\usepackage{bera}% optional: just to have a nice mono-spaced font
+\usepackage{bera}
 \usepackage{listings}
 \usepackage{xcolor}
 
@@ -618,6 +637,9 @@ $if(beamer)$
 $else$
 \maketitle
 $endif$
+
+\tableofcontents
+
 $if(abstract)$
 \begin{abstract}
 $abstract$
