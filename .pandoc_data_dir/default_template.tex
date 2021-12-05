@@ -11,9 +11,13 @@ $endif$
 \documentclass[
 $if(fontsize)$
   $fontsize$,
+$else$
+  12pt,
 $endif$
 $if(papersize)$
   $papersize$paper,
+$else$
+  a4paper,
 $endif$
 $if(beamer)$
   ignorenonframetext,
@@ -249,7 +253,7 @@ $else$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
 $else$
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[total={6in, 10in}]{geometry}
 $endif$
 $if(beamer)$
 \newif\ifbibliography
@@ -274,6 +278,13 @@ $endif$
 \usepackage{accents}
 \usepackage{hyperref}
 \usepackage{graphicx}
+
+\newtheoremstyle{break}
+  {\topsep}{\topsep}
+  {\itshape}{}
+  {\bfseries}{}
+  {\newline}{}
+\theoremstyle{break}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{definition}{Definition}
@@ -637,9 +648,6 @@ $if(beamer)$
 $else$
 \maketitle
 $endif$
-
-\tableofcontents
-
 $if(abstract)$
 \begin{abstract}
 $abstract$

@@ -1,6 +1,8 @@
 ---
 title: Pandoc
 listings-disable-line-numbers: true
+documentclass: article
+toc: true
 ---
 
 # Pandoc Configurations
