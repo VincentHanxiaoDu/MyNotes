@@ -84,3 +84,8 @@ toc: true
   ]
   ```
   4. Run the task by opening the Command Palette (Ctrl+Shift+P on Windows or Command+Shift+P on Mac), search for "Task: Run Task" and click the task created.
+
+- Skim (PDF viewer)
+  1. Skim provides automatic reloading feature, which is useful in editing markdown files.
+  2. Go to Skim -> Preferences -> Sync
+  3. Check "Check for file changes" and "Reload automatically" options.
