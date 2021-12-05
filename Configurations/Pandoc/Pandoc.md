@@ -15,7 +15,7 @@ toc: true
 2. Install [Pandoc](https://pandoc.org/).
 3. Install [LaTeX](https://www.latex-project.org/).
 4. Install [LaTeX language support](https://marketplace.visualstudio.com/items?itemName=mathematic.vscode-latex) VScode extension. (Recommended)
-5. Install [PDF Preview](https://marketplace.visualstudio.com/items?itemName=analytic-signal.preview-pdf) VScode extension. (Recommended)
+5. Install [Skim](https://skims.com/). (Recommended)
 
 ### Configurations
 
