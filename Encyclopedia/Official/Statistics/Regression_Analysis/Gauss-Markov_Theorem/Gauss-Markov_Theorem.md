@@ -11,7 +11,7 @@ toc: true
 Suppose there is a linear model $Y=X\underaccent{\tilde}{\beta}+
 \underaccent{\tilde}{\epsilon}$, where $X$ is an $n \times d$ design matrix,
 $\underaccent{\tilde}{\beta}$ is a $d \times 1$ matrix of weights (i.e. coefficients), and
-$\underaccent{\tilde}{\epsilon}$ is a $n \times 1$ matrix of residuals
+$\underaccent{\tilde}{\epsilon}$ is a $n \times 1$ matrix of \href{../../Optimization/Errors_and_Residuals/Errors_and_Residuals.pdf}{errors}
 $\epsilon_i$'s, $i \in [n]$. 
 
 Under the Gauss-Markov Assumptions, i.e.:
@@ -26,7 +26,7 @@ Under the Gauss-Markov Assumptions, i.e.:
   
   i.e. $Var[\epsilon_i]=\sigma^2 < \infty, \forall i \in [n]$.
 \item
-  \label{assumption3}Distinct residual terms are uncorrelated, 
+  \label{assumption3}Distinct error terms are uncorrelated, 
   
   i.e. $Cov[\epsilon_i, \epsilon_j]=0, \forall i \neq j$ \& $i, j \in [n]$.
 \end{enumerate}
