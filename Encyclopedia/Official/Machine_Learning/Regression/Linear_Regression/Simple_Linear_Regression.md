@@ -69,7 +69,7 @@ Thus, the OLS estimator of $\beta_0$ is given by:
     &= \argmin_{\beta_0} E_{OLS}(\beta_0, \beta_1)
 \end{align}
 
-The analytic solution of $\hat{\beta_0}_{OLS}$ can be found by applying the derivative test.
+The analytical solution of $\hat{\beta_0}_{OLS}$ can be found by applying the derivative test.
 
 First-derivative test:
 \begin{align}
@@ -99,7 +99,7 @@ The OLS estimator of $\beta_1$ is given by:
 
 Again, the $\beta_1$ here is not the the real value of the parameter but a variable to be optimized over.
 
-The analytic solution of $\hat{\beta_1}_{OLS}$ can be found by applying the derivative test.
+The analytical solution of $\hat{\beta_1}_{OLS}$ can be found by applying the derivative test.
 
 First-derivative test:
 \begin{align}
