@@ -84,7 +84,7 @@ Set $\frac{\partial E_{OLS}}{\partial \beta_0} = 0$ to get extrema of $E_{OLS}$ 
     &\implies \beta_{0extrema} = -\frac{\beta_1 \displaystyle\sum_{i=1}^n x_i - \displaystyle\sum_{i=1}^n y_i}{n}\\
     &\implies \beta_{0extrema} = \bar{y} - \beta_1 \bar{x}
 \end{align}
-where $\bar{x} = \displaystyle\sum_{i=1}^n x_i$ is the average of $x_i$'s and $\bar{y} = \displaystyle\sum_{i=1}^n y_i$ is the average of $y_i$'s.
+where $\bar{x} = \frac{1}{n}\displaystyle\sum_{i=1}^n x_i$ is the average of $x_i$'s and $\bar{y} = \frac{1}{n}\displaystyle\sum_{i=1}^n y_i$ is the average of $y_i$'s.
 
 Note that for $\hat{\beta_0}_{OLS} = \beta_{0extrema}$, it is necessary to check $\frac{\partial^2 E_{OLS}}{\partial \beta_{0extrema}^2} > 0$ (i.e. second-derivative test). However, from equation (\ref{eq9}), it is obvious that $E_{OLS}$ is a quadratic function opens upwards with respect of $\hat{\beta_0}$, which ensures that $\hat{\beta_0}_{OLS} = \beta_{0extrema} = \argmin_{\beta_0} E_{OLS}(\beta_0, \beta_1)$. Therefore,
 \begin{align}
@@ -95,7 +95,7 @@ The OLS estimator of $\beta_1$ is given by:
 \begin{align}
     \hat{\beta_1}_{OLS}
     &= \argmin_{\beta_1} E_{OLS}(\hat{\beta_0}_{OLS}, \beta_1)
-\end{align}s
+\end{align}
 
 Again, the $\beta_1$ here is not the the real value of the parameter but a variable to be optimized over.
 
